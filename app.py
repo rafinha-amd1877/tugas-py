@@ -1,14 +1,11 @@
 print("SLIP GAJI PT DINGIN DAMAI")
 print("=" * 40)
 
-nama = input("Nama karyawan : ")
+nama = input("Nama karyawan : ").upper()
 gol_jabatan = int(input("golongan jabatan [1/2/3] : "))
-pendidikan = input("Pendidikan [SMA/D1/D3/S1]: ".upper())
+pendidikan = input("Pendidikan [SMA/D1/D3/S1]: ").upper()
 jml_jam_kerja = int(input("jumlah jam kerja : "))
 gaji_pokok = 300000
-
-upperName = nama.upper()
-upperPend = pendidikan.upper()
 
 print("=" * 40)
 
@@ -23,13 +20,13 @@ else:
     tunjangan_jabatan = 0
 
 # bonus berdasarkan pendidikan
-if upperPend == "SMA":
+if pendidikan == "SMA":
     tunjangan_pendidikan = int(0.025 * gaji_pokok)
-elif upperPend == "D1":
+elif pendidikan == "D1":
     tunjangan_pendidikan = int(0.05 * gaji_pokok)
-elif upperPend == "D3":
+elif pendidikan == "D3":
     tunjangan_pendidikan = int(0.2 * gaji_pokok)
-elif upperPend == "S1":
+elif pendidikan == "S1":
     tunjangan_pendidikan = int(0.3 * gaji_pokok)
 else:
     tunjangan_pendidikan = 0
@@ -41,7 +38,7 @@ else:
 
 total_gaji = gaji_pokok + tunjangan_jabatan + tunjangan_pendidikan + lembur
 
-print(f"gaji yang diterima oleh {upperName}")
+print(f"gaji yang diterima oleh {nama}")
 print(f"gaji pokok : {gaji_pokok:,}")
 print(f"tunjangan jabatan : {tunjangan_jabatan:,}")
 print(f"tunjangan pendidikan : {tunjangan_pendidikan:,}")
