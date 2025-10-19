@@ -14,23 +14,23 @@ print("=" * 40)
 
 # mengitung jumlah bonus berdasarkan jabatan
 if gol_jabatan == 1:
-    tunjangan_jabatan = 0.05 * 300000
+    tunjangan_jabatan = int(0.05 * gaji_pokok)
 elif gol_jabatan == 2:
-    tunjangan_jabatan = 0.10 * 300000
+    tunjangan_jabatan = int(0.10 * gaji_pokok)
 elif gol_jabatan == 3:
-    tunjangan_jabatan = 0.15 * 300000
+    tunjangan_jabatan = int(0.15 * gaji_pokok)
 else:
     tunjangan_jabatan = 0
 
 # bonus berdasarkan pendidikan
 if upperPend == "SMA":
-    tunjangan_pendidikan = 0.025 * 300000
+    tunjangan_pendidikan = int(0.025 * gaji_pokok)
 elif upperPend == "D1":
-    tunjangan_pendidikan = 0.05 * 300000
+    tunjangan_pendidikan = int(0.05 * gaji_pokok)
 elif upperPend == "D3":
-    tunjangan_pendidkan = 0.2 * 300000
+    tunjangan_pendidikan = int(0.2 * gaji_pokok)
 elif upperPend == "S1":
-    tunjangan_pendidikan = 0.3 * 300000
+    tunjangan_pendidikan = int(0.3 * gaji_pokok)
 else:
     tunjangan_pendidikan = 0
 
@@ -41,7 +41,8 @@ else:
 
 total_gaji = gaji_pokok + tunjangan_jabatan + tunjangan_pendidikan + lembur
 
-print(f"gaji yang diterima oleh {nama}")
+print(f"gaji yang diterima oleh {upperName}")
+print(f"gaji pokok : {gaji_pokok:,}")
 print(f"tunjangan jabatan : {tunjangan_jabatan:,}")
 print(f"tunjangan pendidikan : {tunjangan_pendidikan:,}")
 print(f"honor lembur : {lembur:,}")
